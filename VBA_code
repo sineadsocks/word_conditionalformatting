@@ -1,0 +1,21 @@
+Private Sub Document_ContentControlOnExit(ByVal ContentControl As ContentControl, Cancel As Boolean)
+With ContentControl.Range
+    If ContentControl.Title = "RAG" Then
+        Select Case .Text
+        
+            Case "Option 1"                 #input what the text for the drop down should be for red
+                .Cells(1).Shading.BackgroundPatternColor = wdColorRed
+
+            Case "Option 2"           #input what the text for the drop down should be for amber
+                .Cells(1).Shading.BackgroundPatternColor = RGB(255, 192, 0)
+
+            Case "Option 3"           #input what the text for the drop down should be for green
+                .Cells(1).Shading.BackgroundPatternColor = RGB(0, 176, 80)
+
+            Case Else
+                .Cells(1).Shading.BackgroundPatternColor = wdColorAutomatic
+        End Select
+    End If
+End With
+
+End Sub
